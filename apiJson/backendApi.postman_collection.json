@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "b7956390-dd35-45a2-a1cb-d5caa3c3c825",
+		"name": "backendApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28208339"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "getUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}",
+							"host": [
+								"{{BaseURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUsers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"fullName\":\"M.S. Dhoni\",\r\n \"email\":\"dhonigmail.com\",\r\n \"mobileNumber\":\"56948733645\",\r\n \"designation\":\"Software Engineer\",\r\n \"password\":\"test@dhoni\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerUsers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"fullName\":\"M.S. Dhoni\",\r\n\"email\":\"dhonigmail.com\",\r\n\"mobileNumber\":\"56948733645\",\r\n\"designation\":\"Software Engineer\",\r\n\"password\":\"test@dhoni\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUsers",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "projects",
+			"item": []
+		}
+	]
+}
