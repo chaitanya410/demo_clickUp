@@ -4,8 +4,8 @@ const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const userRoutes = require("./Routes/userRoute");
-const projectRoutes = require("./Routes/projectRoute"); 
+const userRoutes = require("./Routes/userRoutes");
+const projectRoutes = require("./Routes/projectRoutes"); 
 
 const cors = require("cors");
 
