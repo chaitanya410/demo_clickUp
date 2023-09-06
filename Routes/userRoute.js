@@ -1,12 +1,11 @@
 const {Router} = require("express");    
 
-const {getUsers,registerUsers,loginUsers,updateUsers} =require("../userController/userController")
+const {getUsers,registerUsers,loginUsers,updateUsers} =require("../Controllers/userController")
 
 const router = Router();
 router.get("/getUsers",getUsers);
 router.post("/registerUsers", registerUsers);
 router.post("/loginUsers", loginUsers);
-router.post("/updateUsers/:userId", updateUsers); // Add the update route
-
+router.post("/updateUsers/:userId", updateUsers);
 
 module.exports=router;

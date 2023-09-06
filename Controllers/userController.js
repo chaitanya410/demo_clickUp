@@ -1,4 +1,4 @@
-const Model = require("../userModel/userModel");
+const Model = require("../Models/userModel");
 const jwt = require("jsonwebtoken");
 const secretkey = "secretkey";
 const bcrypt = require("bcrypt");
@@ -81,10 +81,9 @@ module.exports.loginUsers = async (req, res) => {
 
 module.exports.updateUsers = async (req, res) => {
   try {
-    const userId = req.params.userId; // Get the user ID from the request URL
-    const updates = req.body; // Get the updates from the request body
-
-    // Update the user information using the Mongoose model
+    const userId = req.params.userId; 
+    const updates = req.body; 
+  
     const updatedUser = await Model.findByIdAndUpdate(userId, updates, { new: true });
 
     if (!updatedUser) {
@@ -107,5 +106,8 @@ module.exports.updateUsers = async (req, res) => {
     });
   }
 };
+
+
+
 
 

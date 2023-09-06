@@ -1,15 +1,18 @@
+
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const routes = require("./userRoutes/userRoute");
+const userRoutes = require("./Routes/userRoute");
+const projectRoutes = require("./Routes/projectRoute"); 
+
 const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 5000; 
+const PORT = process.env.PORT || 5000;
 
-app.use(express.json()); // Use express.json() as a function
+app.use(express.json());
 app.use(cors());
 
 mongoose
@@ -17,6 +20,8 @@ mongoose
   .then(() => console.log("MongoDB connected..."))
   .catch((err) => console.log(err));
 
-app.use("/api", routes);
+app.use("/api/users", userRoutes); 
+app.use("/api/projects", projectRoutes); 
 
 app.listen(PORT, () => console.log(`Listening at ${PORT}`));
+
