@@ -15,9 +15,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}",
+							"raw": "http://localhost:5000/api/getUsers",
+							"protocol": "http",
 							"host": [
-								"{{BaseURL}}"
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"getUsers"
 							]
 						}
 					},
@@ -38,7 +44,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/login",
+							"raw": "http://localhost:5000/api/loginUsers",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -46,7 +52,7 @@
 							"port": "5000",
 							"path": [
 								"api",
-								"login"
+								"loginUsers"
 							]
 						}
 					},
@@ -59,7 +65,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"fullName\":\"M.S. Dhoni\",\r\n\"email\":\"dhonigmail.com\",\r\n\"mobileNumber\":\"56948733645\",\r\n\"designation\":\"Software Engineer\",\r\n\"password\":\"test@dhoni\"\r\n}",
+							"raw": "{\r\n\"fullName\":\"Virat Kohli\",\r\n\"email\":\"kohli@gmail.com\",\r\n\"mobileNumber\":\"569487232135\",\r\n\"designation\":\"Software Engineer\",\r\n\"password\":\"test@kohli\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -67,7 +73,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/register",
+							"raw": "http://localhost:5000/api/registerUsers",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -75,7 +81,7 @@
 							"port": "5000",
 							"path": [
 								"api",
-								"register"
+								"registerUsers"
 							]
 						}
 					},
@@ -84,8 +90,30 @@
 				{
 					"name": "updateUsers",
 					"request": {
-						"method": "PUT",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"fullName\":\"Jhon Cena\",\r\n \"email\":\"cena@gmail.com\",\r\n \"mobileNumber\":\"(555)-342-412\",\r\n \"designation\":\"React, Angular Developer\",\r\n \"password\":\"test@cena\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/updateUsers/64f0725f043251a8cc1192a5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"updateUsers",
+								"64f0725f043251a8cc1192a5"
+							]
+						}
 					},
 					"response": []
 				}

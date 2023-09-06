@@ -3,18 +3,18 @@ const jwt = require("jsonwebtoken");
 const secretkey = "secretkey";
 const bcrypt = require("bcrypt");
 
-module.exports.getData = async (req, res) => {
-  // const tasks = await Model.find()
-  // res.send(tasks)
-  user={
-    name:"Chaitanya Avinash Ubale",
-    age:21,  
-  }
-  res.send(user);
+module.exports.getUsers = async (req, res) => {
+  const tasks = await Model.find()
+  res.send(tasks)
+  // user={
+  //   name:"Chaitanya Avinash Ubale",
+  //   age:21,  
+  // }
+  // res.send(user);
  
 };
 
-module.exports.saveData = async (req, res) => {
+module.exports.registerUsers = async (req, res) => {
   try {
     const { fullName, email, mobileNumber, designation, password, address } = req.body;
 
@@ -50,7 +50,7 @@ module.exports.saveData = async (req, res) => {
 
 
 
-module.exports.login = async (req, res) => {
+module.exports.loginUsers = async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -79,7 +79,7 @@ module.exports.login = async (req, res) => {
   }
 };
 
-module.exports.updateUser = async (req, res) => {
+module.exports.updateUsers = async (req, res) => {
   try {
     const userId = req.params.userId; // Get the user ID from the request URL
     const updates = req.body; // Get the updates from the request body
